@@ -1,0 +1,22 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 25px;
+  margin-top: 10px;
+  border-top: 3px solid rgba(29, 78, 78, 0.75);
+}
+
+.footer__info {
+  margin-top: 10px;
+}
+
+.text {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.894);
+}
+
+.link {
+  font-size: 18px;
+  text-decoration: underline;
+  color: rgba(47, 32, 255, 0.726);
+}

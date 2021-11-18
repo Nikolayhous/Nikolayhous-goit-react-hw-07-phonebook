@@ -1,0 +1,63 @@
+.section__form {
+  margin-top: 35px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 35px;
+  padding: 20px;
+  background-color: rgba(209, 233, 253, 0.478);
+  border: 2px solid black;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.label__agree {
+  display: flex;
+  align-items: flex-end;
+  max-width: 80px;
+  cursor: pointer;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+
+.inputName {
+  padding: 5px 10px;
+}
+
+input::placeholder {
+  font-size: 14px;
+}
+
+.btn {
+  display: block;
+  max-width: 120px;
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.btn:active {
+  background-color: rgba(8, 51, 172, 0.719);
+  color: #fff;
+}
