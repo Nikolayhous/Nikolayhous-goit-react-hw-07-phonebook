@@ -1,26 +1,26 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { getContacts } from '../../redux/phonebook/selector';
+import { getFilteredContacts } from '../../redux/phonebook/selector';
 import s from './ContactList.module.css';
 import { fetchContact, deleteContact } from '../../redux/phonebook/operations';
 import { useEffect } from 'react';
 
 function ContactList() {
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(getFilteredContacts);
   const dispatch = useDispatch();
   const totalNumber = contacts.length;
 
   useEffect(() => {
-    dispatch(fetchContact);
+    dispatch(fetchContact());
   }, [dispatch]);
 
   return (
     <div className={s.contactList}>
       {contacts.length > 0 && (
         <ul className={s.list}>
-          {contacts.map(({ name, number, id }) => (
+          {contacts.map(({ name, phone, id }) => (
             <li className={s.item} key={id}>
               <p className={s.text}>{name}:</p>
-              <p className={`${s.text} ${s.number}`}>{number}</p>
+              <p className={`${s.text} ${s.number}`}>{phone}</p>
               <button
                 className={s.btn}
                 type="button"

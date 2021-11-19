@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import s from './Form.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { getFilteredContacts } from '../../redux/phonebook/selector';
+import { getContacts } from '../../redux/phonebook/selector';
 import { addContact } from '../../redux/phonebook/operations';
 
 function ContactForm() {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [phone, setPhone] = useState('');
   const [agree, setAgree] = useState(false);
 
-  const contacts = useSelector(getFilteredContacts);
+  const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
   const handleChange = e => {
@@ -18,8 +18,8 @@ function ContactForm() {
       case 'name':
         setName(value);
         break;
-      case 'number':
-        setNumber(value);
+      case 'phone':
+        setPhone(value);
         break;
       default:
         return;
@@ -29,12 +29,12 @@ function ContactForm() {
   const handleSubmit = e => {
     e.preventDefault();
     const comparableContact = contacts.some(
-      element => element.name.toLowerCase() === name.toLowerCase(),
+      el => el.name.toLowerCase() === name.toLowerCase(),
     );
     if (comparableContact) {
-      return alert('This contact has already been added to the list');
+      return alert(`Contact ${name} has already been added to the list`);
     }
-    dispatch(addContact({ name, number }));
+    dispatch(addContact({ name, phone }));
     resetForm();
   };
 
@@ -44,7 +44,7 @@ function ContactForm() {
 
   const resetForm = () => {
     setName('');
-    setNumber('');
+    setPhone('');
     setAgree(false);
   };
 
@@ -71,8 +71,8 @@ function ContactForm() {
           <input
             className={s.inputName}
             type="tel"
-            value={number}
-            name="number"
+            value={phone}
+            name="phone"
             placeholder="Enter number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
