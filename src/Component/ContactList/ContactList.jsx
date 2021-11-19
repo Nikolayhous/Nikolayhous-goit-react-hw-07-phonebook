@@ -15,6 +15,9 @@ function ContactList() {
 
   return (
     <div className={s.contactList}>
+      <p className={s.total__number}>
+        Total number of subscribers:{totalNumber}
+      </p>
       {contacts.length > 0 && (
         <ul className={s.list}>
           {contacts.map(({ name, phone, id }) => (
@@ -32,10 +35,6 @@ function ContactList() {
           ))}
         </ul>
       )}
-
-      <p className={s.total__number}>
-        Total number of subscribers:{totalNumber}
-      </p>
     </div>
   );
 }
