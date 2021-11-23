@@ -49,7 +49,9 @@ function ContactForm() {
   };
 
   return (
-    <div className={s.section__form}>
+    <div
+      className={`${s.section__form} ${s.animate__animated} ${s.animate__backInUp}`}
+    >
       <form className={s.form} onSubmit={handleSubmit}>
         <label className={s.label}>
           Name

@@ -7,7 +7,7 @@ body {
   background-image: url(./images/34.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  /* backdrop-filter: blur(2px); */
+  backdrop-filter: blur(2px);
 }
 
 img {

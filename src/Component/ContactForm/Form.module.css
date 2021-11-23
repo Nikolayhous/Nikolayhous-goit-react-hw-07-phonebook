@@ -62,3 +62,7 @@ input::placeholder {
   background-color: rgba(8, 51, 172, 0.719);
   color: #fff;
 }
+
+.animate__animated.animate__backInUp {
+  --animate-duration: 2.5s;
+}
